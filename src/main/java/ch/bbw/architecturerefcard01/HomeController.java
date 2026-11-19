@@ -3,7 +3,6 @@ package ch.bbw.architecturerefcard01;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import java.net.InetAddress;
 
 @Controller
 public class HomeController {
@@ -14,7 +13,7 @@ public class HomeController {
         Message message = new Message();
 
         try {
-            message.setText("IP Address (Server): " + InetAddress.getLocalHost().getHostAddress());
+            message.setText("IP Address (Server): " + ServerAddress.get());
         } catch(Exception e) {
             message.setText("IP Address (Server): ---");
         }
